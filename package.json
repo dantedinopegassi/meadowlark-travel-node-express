@@ -1,0 +1,15 @@
+{
+  "name": "002-meadowlark-travel",
+  "version": "1.0.0",
+  "description": "Proyecto del libro: web-development-with-node-and-express-2e",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
