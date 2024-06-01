@@ -1,4 +1,11 @@
+const handleBars = require("express-handlebars")
+
 const app = require('express')();
+app.engine('handlebars', handleBars({
+    defaultLayout: "main",
+}))
+
+app.set('view engine', "handlebars");
 
 const port = process.env.PORT || 24900; // el puerto va a ser env.PORT o el 24900
 
