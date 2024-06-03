@@ -3,12 +3,24 @@ const hb = require("express-handlebars");
 
 const app = x();
 
+const fortunes = [
+  "Conquer your fears or they will conquer you.",
+  "Rivers need springs.",
+  "Do not fear what you don't know.",
+  "You will have a pleasant surprise.",
+  "Whenever possible, keep it simple.",
+];
+
 app.set("views", __dirname + "/views");
-app.engine("handlebars", hb.engine({
+app.engine(
+  "handlebars",
+  hb.engine({
     defaultLayout: "template",
   })
 );
 app.set("view engine", "handlebars");
+
+app.use(x.static(__dirname + "/public"));
 
 const port = process.env.PORT || 24900; // el puerto va a ser env.PORT o el 24900
 
@@ -24,7 +36,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  const fortuna = fortunes[Math.floor(Math.random() * 5)];
+  res.render("about", { fortune: fortuna });
 });
 
 app.use((req, res) => {
