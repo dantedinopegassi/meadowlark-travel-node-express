@@ -54,5 +54,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`arranco el sv en el puerto ${port}, ctrl-c para liquidarlo`);
+  console.log(`arranco el sv en 'http://localhost:${port}', ctrl-c para liquidarlo`);
 });
