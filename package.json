@@ -4,7 +4,7 @@
   "description": "Proyecto del libro: web-development-with-node-and-express-2e",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
