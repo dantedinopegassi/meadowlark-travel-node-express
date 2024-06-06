@@ -26,6 +26,8 @@ test("home page renders", () => {
   /** Ahora, por fin, llamas a tu funcion                                                               **/
   /*******************************************************************************************************/
   handlers.home(req, res);
+  console.log(res.render.mock.calls);
+  console.log(res.render.mock.calls[0][0]);
 
   /*******************************************************************************************************/
   /** Verify that the 'render' method of the response object was called with 'home' as the first        **/
