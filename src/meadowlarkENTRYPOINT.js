@@ -60,8 +60,18 @@ app.use((err, req, res, next) => {
 // manera corta y refactorizada
 app.use(handle.serverError);
 
-app.listen(port, () => {
-  console.log(
-    `arranco el sv en 'http://localhost:${port}', ctrl-c para liquidarlo`
-  );
-});
+/*******************************************************************************************************/
+/** esto arranca el sv                                                                                **/
+/** lisa y llanamente, arrancar un archivo con el comando "node"                                      **/
+/** convierte la propiedad "require.main" en el modulo global llamado                                 **/
+/** "module", caso contrario, algun otro modulo está importando este archivo                          **/
+/*******************************************************************************************************/
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(
+      `arranco el sv en 'http://localhost:${port}', ctrl-c para liquidarlo`
+    );
+  });
+} else {
+  module.exports = app;
+}

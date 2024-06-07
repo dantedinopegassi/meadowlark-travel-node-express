@@ -1,7 +1,7 @@
 /*******************************************************************************************************/
 /** Importa el paquete a testear.                                                                     **/
 /*******************************************************************************************************/
-const handlers = require("../componentsAKAlibAKAbackend/handlers");
+const handlers = require("../../componentsAKAlibAKAbackend/handlers");
 
 /*******************************************************************************************************/
 /** Cuando instalas Jest, se aniaden automaticamente algunas funciones GLOBALES.                      **/

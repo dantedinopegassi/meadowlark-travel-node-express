@@ -1,4 +1,4 @@
-const handlers = require("../componentsAKAlibAKAbackend/handlers");
+const handlers = require("../../componentsAKAlibAKAbackend/handlers");
 
 test("test 404 not found", () => {
   const req = {};

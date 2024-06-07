@@ -1,4 +1,4 @@
-const handlers = require("../componentsAKAlibAKAbackend/handlers");
+const handlers = require("../../componentsAKAlibAKAbackend/handlers");
 
 test("test 500", () => {
   const req = {};
