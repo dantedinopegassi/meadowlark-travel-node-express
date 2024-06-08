@@ -8,7 +8,6 @@ export default [
       sourceType: "commonjs",
       globals: { ...globals.node, ...globals.jest },
     },
-    env: { jest: true },
   },
   { languageOptions: { globals: globals.node } },
   pluginJs.configs.recommended,
