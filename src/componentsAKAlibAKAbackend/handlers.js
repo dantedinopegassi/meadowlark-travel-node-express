@@ -9,4 +9,6 @@ exports.products = (req, res) => res.render("productos");
 
 exports.notFound = (req, res) => res.render("404");
 
+/* eslint-disable no-unused-vars */
 exports.serverError = (err, req, res, next = () => {}) => res.render("500");
+/* eslint-disable no-unused-vars */

@@ -4,7 +4,9 @@
   "description": "Proyecto del libro: web-development-with-node-and-express-2e",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "npx eslint ./src/meadowlarkENTRYPOINT.js ./src/",
+    "exec": "node ./src/meadowlarkENTRYPOINT.js"
   },
   "keywords": [],
   "author": "",

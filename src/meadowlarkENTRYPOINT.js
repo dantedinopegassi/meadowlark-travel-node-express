@@ -19,6 +19,9 @@ app.engine(
 
 const port = process.env.PORT || 24900; // el puerto va a ser env.PORT o el 24900
 
+// desabilita metadatos del server para no leakear info a hackers
+app.disable("x-powered-by");
+
 // manera de rutear sin handlebars
 app.get("/a", (req, res) => {
   res.type("text/plain");
@@ -39,8 +42,18 @@ app.get("/about", (req, res) => {
 // manera de rutear con AUN MAS refactorizacion
 app.get("/aboutdos", handle.about);
 
+// peticion del header
+app.get("/header", (req, res) => {
+  res.type("text/plain");
+  const headers = Object.entries(req.headers).map(
+    ([llave, valor]) => `${llave} : ${valor}`
+  );
+  res.send(headers.join("\n"));
+});
+
 // manera larga de 404
 app.use((req, res) => {
+  console.log("hey dude");
   res.type("text/plain");
   res.status(404);
   res.send("404 Not Found");
@@ -50,7 +63,10 @@ app.use((req, res) => {
 app.use(handle.notFound);
 
 // manera larga de 500
+/* eslint-disable no-unused-vars */
 app.use((err, req, res, next) => {
+  /* eslint-disable no-unused-vars */
+
   console.error(err);
   res.type("text/plain");
   res.status(500);

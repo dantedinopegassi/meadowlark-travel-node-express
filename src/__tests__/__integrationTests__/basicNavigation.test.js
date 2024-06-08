@@ -16,6 +16,7 @@ let port = null;
 beforeEach(async () => {
   port = await portfinder.getPortPromise();
   server = app.listen(port);
+  return true;
 });
 
 afterEach(() => {
@@ -32,4 +33,5 @@ test("test home page link to about page", async () => {
   ]);
   expect(page.url()).toBe(`http://localhost:${port}/about`);
   await browser.close();
+  return true;
 });
